@@ -18,17 +18,19 @@ function deObjetoAmatriz(objeto){
 
 
 function numberOfCharacters(string) {
-  //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece 
+  //La función recibe un string. Recorre el srting y devuelve el caracter con el número de veces que aparece
   //en formato par clave-valor.
-  //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
+  //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   //Escribe tu código aquí
-  for (let i=0; i<string.length;i++){
+  newObj={};
+  for (let i=0; i<string.length;i++){               
+    newObj[string[i]]=0
     for(let j=0; j<string.length;j++){
         if(string[i]===string[j]){
-          string[i]+=1
-        }
+          newObj[string[i]]=newObj[string[i]]+1;
+        } 
       }
-    }
+    }return newObj
 }
 
 
@@ -37,6 +39,27 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let newArray=[];
+  let str=s.split('');
+  // for (let i=0; i<s.length;i++){
+  //   if(s[i]===s[i].toUpperCase()){
+  //     newArray+=s[i]
+  //   }else{
+  //     newArray+=s[i]
+  //   }
+  // }return newArray
+  for (let i=0; i<s.length;i++){
+    if(str[i]===str[i].toUpperCase()){
+      newArray.push(str[i])
+    }
+  }
+  if(str.length!=newArray.length){
+    for (let j=0; j<str.length;j++){
+      if(str[j]!=str[j].toUpperCase()){
+        newArray.push(str[i])
+      }
+    }   
+  }return newArray.join('')
 }
 
 
