@@ -56,7 +56,7 @@ function capToFront(s) {
   if(str.length!=newArray.length){
     for (let j=0; j<str.length;j++){
       if(str[j]!=str[j].toUpperCase()){
-        newArray.push(str[i])
+        newArray.push(str[j])
       }
     }   
   }return newArray.join('')
@@ -69,6 +69,12 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  let arr=str.split(' ');
+  let arr2=[];
+  for (let i=0; i<arr.length;i++){
+    arr2.push(arr[i].split('').reverse().join(''))
+  }
+  return arr2.join(' ')
 } 
 
 
