@@ -84,8 +84,8 @@ function capicua(numero){
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
   let num1=numero.toString(10);
-  let num2=numero.toString(10).split('').reverse().join('')
-  if (num1==num2){return "Es capicua"} else {return "No es capicua"}
+  let num2=numero.toString(10).split('').reverse().join('');
+  return num1===num2? "Es capicua":"No es capicua"
 
 }
 
@@ -96,10 +96,8 @@ function deleteAbc(cadena){
   //Escribe tu código aquí
   let newArr=[];
   for (let i=0;i<cadena.length;i++){
-    if(cadena[i]=='a' || cadena[i]=='b' |cadena[i]=='c'){
-      false
-      
-    }else {newArr.push(cadena[i])}
+    cadena[i]=='a' || cadena[i]=='b' |cadena[i]=='c'?false:newArr.push(cadena[i])
+  
   }return newArr.join('')
 }
 
